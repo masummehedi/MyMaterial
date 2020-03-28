@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyMaterial</string>
+
+    <string name="nav_open">navigation drawer Open</string>
+
+    <string name="nav_close">navigation drawer close</string>
+
+
+</resources>
