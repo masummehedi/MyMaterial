@@ -1,6 +1,7 @@
 package com.seu.mymaterial;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,14 +9,22 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import static com.seu.mymaterial.R.drawable.curious;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -103,6 +112,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        View headerview = navigationView.getHeaderView(0);
+        TextView profilename = (TextView) headerview.findViewById(R.id.name);
+        profilename.setText("name");
+
+        ImageView imageView=headerview.findViewById(R.id.image);
+        imageView.setImageResource(R.drawable.ic_upload);
+
+
 
     }
 
@@ -158,5 +175,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void nav_click(View view) {
+
+        Toast.makeText(MainActivity.this, " Nav Image Click", Toast.LENGTH_SHORT).show();
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
     }
 }

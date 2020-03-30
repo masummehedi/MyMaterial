@@ -8,11 +8,14 @@
     android:orientation="vertical"
     android:layout_height="176dp">
     <ImageView
+        android:id="@+id/image"
+        android:onClick="nav_click"
         android:scaleType="centerCrop"
         android:src="@drawable/curious"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
     <TextView
+        android:id="@+id/name"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorPrimary"
         android:text="Masum Mahdi"
